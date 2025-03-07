@@ -1,5 +1,8 @@
-const User = require("./User");
-const Resistance = require("./Resistance");
-const Cardio = require("./Cardio");
+const router = require("express").Router();
+const userRoutes = require("./user-routes");
+const exerciseRoutes = require("./exercise-routes");
 
-module.exports = { User, Resistance, Cardio };
+router.use("/user", userRoutes);
+router.use("/exercise", exerciseRoutes);
+
+module.exports = router;
